@@ -30,13 +30,13 @@ import theFencer.relics.PlaceholderRelic2;
 import java.util.ArrayList;
 
 import static theFencer.FencerMod.*;
-import static theFencer.characters.TheDefault.Enums.COLOR_GRAY;
+import static theFencer.characters.TheFencer.Enums.COLOR_COBALT;
 
 //Wiki-page https://github.com/daviscook477/BaseMod/wiki/Custom-Characters
 //and https://github.com/daviscook477/BaseMod/wiki/Migrating-to-5.0
 //All text (starting description and loadout, anything labeled TEXT[]) can be found in DefaultMod-character-Strings.json in the resources
 
-public class TheDefault extends CustomPlayer {
+public class TheFencer extends CustomPlayer {
     public static final Logger logger = LogManager.getLogger(FencerMod.class.getName());
 
     // =============== CHARACTER ENUMERATORS =================
@@ -48,10 +48,10 @@ public class TheDefault extends CustomPlayer {
 
     public static class Enums {
         @SpireEnum
-        public static AbstractPlayer.PlayerClass THE_DEFAULT;
-        @SpireEnum(name = "DEFAULT_GRAY_COLOR") // These two HAVE to have the same absolutely identical name.
-        public static AbstractCard.CardColor COLOR_GRAY;
-        @SpireEnum(name = "DEFAULT_GRAY_COLOR") @SuppressWarnings("unused")
+        public static AbstractPlayer.PlayerClass THE_FENCER;
+        @SpireEnum(name = "FENCER_COBALT_COLOR") // These two HAVE to have the same absolutely identical name.
+        public static AbstractCard.CardColor COLOR_COBALT;
+        @SpireEnum(name = "FENCER_COBALT_COLOR") @SuppressWarnings("unused")
         public static CardLibrary.LibraryType LIBRARY_COLOR;
     }
 
@@ -72,7 +72,7 @@ public class TheDefault extends CustomPlayer {
 
     // =============== STRINGS =================
 
-    private static final String ID = makeID("DefaultCharacter");
+    private static final String ID = makeID("FencerCharacter");
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
     private static final String[] NAMES = characterStrings.NAMES;
     private static final String[] TEXT = characterStrings.TEXT;
@@ -99,7 +99,7 @@ public class TheDefault extends CustomPlayer {
 
     // =============== CHARACTER CLASS START =================
 
-    public TheDefault(String name, PlayerClass setClass) {
+    public TheFencer(String name, PlayerClass setClass) {
         super(name, setClass, orbTextures,
                 "theFencerResources/images/char/defaultCharacter/orb/vfx.png", null,
                 new SpriterAnimation(
@@ -215,13 +215,13 @@ public class TheDefault extends CustomPlayer {
     // Should return the card color enum to be associated with your character.
     @Override
     public AbstractCard.CardColor getCardColor() {
-        return COLOR_GRAY;
+        return COLOR_COBALT;
     }
 
     // Should return a color object to be used to color the trail of moving cards
     @Override
     public Color getCardTrailColor() {
-        return FencerMod.DEFAULT_GRAY;
+        return FencerMod.FENCER_COBALT;
     }
 
     // Should return a BitmapFont object that you can use to customize how your
@@ -252,20 +252,20 @@ public class TheDefault extends CustomPlayer {
     // Should return a new instance of your character, sending name as its name parameter.
     @Override
     public AbstractPlayer newInstance() {
-        return new TheDefault(name, chosenClass);
+        return new TheFencer(name, chosenClass);
     }
 
     // Should return a Color object to be used to color the miniature card images in run history.
     @Override
     public Color getCardRenderColor() {
-        return FencerMod.DEFAULT_GRAY;
+        return FencerMod.FENCER_COBALT;
     }
 
     // Should return a Color object to be used as screen tint effect when your
     // character attacks the heart.
     @Override
     public Color getSlashAttackColor() {
-        return FencerMod.DEFAULT_GRAY;
+        return FencerMod.FENCER_COBALT;
     }
 
     // Should return an AttackEffect array of any size greater than 0. These effects

@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theFencer.FencerMod;
-import theFencer.characters.TheDefault;
+import theFencer.characters.TheFencer;
 import theFencer.powers.CommonPower;
 
 import static theFencer.FencerMod.makeCardPath;
@@ -37,7 +37,7 @@ public class DefaultCommonPower extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = TheFencer.Enums.COLOR_COBALT;
 
     private static final int COST = 1;
     private static final int MAGIC = 1;

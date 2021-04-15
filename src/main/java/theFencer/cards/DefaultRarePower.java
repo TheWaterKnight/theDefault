@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theFencer.FencerMod;
-import theFencer.characters.TheDefault;
+import theFencer.characters.TheFencer;
 import theFencer.powers.RarePower;
 
 import static theFencer.FencerMod.makeCardPath;
@@ -32,7 +32,7 @@ public class DefaultRarePower extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = TheFencer.Enums.COLOR_COBALT;
 
     private static final int COST = 3;
     private static final int UPGRADE_COST = 2;

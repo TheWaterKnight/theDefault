@@ -1,11 +1,9 @@
-package theFencer.cards.attack;
+package theFencer.cards.skill;
 
 import basemod.abstracts.CustomCard;
 import basemod.helpers.BaseModCardTags;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -14,46 +12,42 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theFencer.FencerMod;
 import theFencer.enums.AbstractCardEnum;
 
-public class Strike extends CustomCard {
-    public static final String ID = "TheFencerMod:Strike_TheFencer";
+public class Defend extends CustomCard {
+    public static final String ID = "TheCursedMod:Defend_TheCursed";
     public static final String NAME;
     public static final String DESCRIPTION;
-    public static final String IMG_PATH = "cards/strike.png";
+    public static final String IMG_PATH = "cards/defend.png";
 
     private static final CardStrings cardStrings;
 
-    private static final CardType TYPE = CardType.ATTACK;
+    private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.BASIC;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardTarget TARGET = CardTarget.SELF;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 6;
-    private static final int UPGRADE_BONUS = 3;
+    private static final int BLOCK_AMT = 5;
 
-    public Strike() {
+    public Defend() {
         super(ID, NAME, FencerMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.The_Fencer_Blue, RARITY, TARGET);
+        this.baseBlock = this.block = BLOCK_AMT;
 
-        this.baseDamage = this.damage = DAMAGE;
-        this.tags.add(CardTags.STRIKE);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
-                        AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new Strike();
+        return new Defend();
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
-            upgradeName();
-            upgradeDamage(UPGRADE_BONUS);
+            this.upgradeName();
+            this.upgradeBlock(3);
         }
     }
 

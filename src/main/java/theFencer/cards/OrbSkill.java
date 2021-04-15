@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theFencer.FencerMod;
-import theFencer.characters.TheDefault;
+import theFencer.characters.TheFencer;
 import theFencer.orbs.DefaultOrb;
 
 import static theFencer.FencerMod.makeCardPath;
@@ -38,7 +38,7 @@ public class OrbSkill extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
+    public static final CardColor COLOR = TheFencer.Enums.COLOR_COBALT;
 
     private static final int COST = 1;
 
