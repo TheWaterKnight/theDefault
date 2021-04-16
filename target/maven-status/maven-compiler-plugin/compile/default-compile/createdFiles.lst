@@ -22,7 +22,6 @@ theFencer\cards\DefaultCommonAttack.class
 theFencer\cards\AbstractDefaultCard.class
 theFencer\variables\DefaultCustomVariable.class
 theFencer\relics\BottledPlaceholderRelic.class
-theFencer\enums\AbstractCardEnum.class
 theFencer\cards\AbstractDynamicCard.class
 theFencer\FencerMod.class
 theFencer\cards\DefaultSecondMagicNumberSkill.class

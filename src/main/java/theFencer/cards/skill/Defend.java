@@ -10,13 +10,13 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theFencer.FencerMod;
-import theFencer.enums.AbstractCardEnum;
+import theFencer.characters.TheFencer;
 
 public class Defend extends CustomCard {
-    public static final String ID = "TheCursedMod:Defend_TheCursed";
+    public static final String ID = "TheFencerMod:Defend_TheFencer";
     public static final String NAME;
     public static final String DESCRIPTION;
-    public static final String IMG_PATH = "cards/defend.png";
+    public static final String IMG_PATH = "src/main/resources/theFencerResources/images/cards/Skill_p.png";
 
     private static final CardStrings cardStrings;
 
@@ -28,7 +28,7 @@ public class Defend extends CustomCard {
     private static final int BLOCK_AMT = 5;
 
     public Defend() {
-        super(ID, NAME, FencerMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.The_Fencer_Blue, RARITY, TARGET);
+        super(ID, NAME, FencerMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, TheFencer.Enums.COLOR_COBALT, RARITY, TARGET);
         this.baseBlock = this.block = BLOCK_AMT;
 
     }
